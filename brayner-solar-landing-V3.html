@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt"><!--<< Header Area >>--><head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="braynersolar">
+        <meta name="description" content="brayner solar">
+        <!-- ======== Page title ============ -->
+        <title>Brayner Solar</title>
+        <!--<< Favicon >>-->
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+
+        <!-- ======== Cosmetic fixes (mobile video, spacing, justified paragraph) ======== -->
+        <style>
+          /* 1) YouTube responsivo, sem corte em mobile */
+          .about-video-items iframe{
+            width:100%;
+            height:auto;
+            aspect-ratio:16/9;
+            display:block;
+			  margin-bottom: 20px;
+          }
+          /* Fallback p/ browsers sem aspect-ratio */
+          @supports not (aspect-ratio: 16/9){
+            .about-video-items{position:relative;width:100%;padding-top:56.25%}
+            .about-video-items iframe{position:absolute;inset:0;width:100%;height:100%}
+          }
+
+          /* 2) Evitar palavras coladas no mobile (ex: "instalação rápida e limpa") */
+          .hero-content h1,
+          .hero-content h6,
+          .hero-content p,
+          .section-title h2{
+            word-break:normal;
+            overflow-wrap:anywhere;
+            hyphens:auto;
+          }
+          @media (max-width:575.98px){
+            .hero-content h1{
+              letter-spacing:.2px;
+              word-spacing:.02em;
+              line-height:1.15;
+            }
+          }
+
+          /* 3) Justificar o parágrafo "Fundada há 28 anos..." em Sobre nós */
+          .about-section .about-content p{
+            text-align:justify;
+            text-justify:inter-word;
+          }
+          @media (max-width:767.98px){
+            .about-section .about-content p{line-height:1.6}
+          }
+			 /* Dots */
+  .image-carousel-block .swiper-pagination {
+    position: relative;
+    margin-top: 10px;
+  }
+  .image-carousel-block .swiper-pagination-bullet {
+    width: 10px; height: 10px;
+    opacity: .4;
+  }
+  .image-carousel-block .swiper-pagination-bullet-active { opacity: 1; }
+
+  /* Imagen responsiva */
+  .image-carousel-block .swiper-slide img{
+    width:100%; height:auto; display:block; border-radius:12px;
+  }
+
+/* Que ocupe todo el ancho del contenedor */
+.nice-select {
+ 
+  padding: 10px 10px 20px 20px; /* mismo alto que input */
+  height: 65px; 
+border-radius: 4px;/* ajusta según tus inputs */
+  line-height: 26px;        /* centra el texto verticalmente */
+  border: 1px solid #dddddd;
+}
+
+/* Asegurar que la flecha siempre se vea */
+.nice-select:after {
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+        </style>
+	<!-- Roboto (Google Fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+    </head>
+      
+    <body cz-shortcut-listen="true">
+
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader loaded" style="display: none;">
+            <div class="animation-preloader">
+               
+                <div class="txt-loading">
+                    <span data-text-preloader="B" class="letters-loading">
+                        B
+                    </span>
+                    <span data-text-preloader="R" class="letters-loading">
+                        R
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                    <span data-text-preloader="Y" class="letters-loading">
+                        Y
+                    </span>
+                    <span data-text-preloader="N" class="letters-loading">
+                        N
+                    </span>
+					<span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+					<span data-text-preloader="R" class="letters-loading">
+                        R
+                    </span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<< Mouse Cursor Start >>-->  
+        <div class="mouse-cursor cursor-outer" style="visibility: visible; transform: translate(608px, 460px);"></div>
+        <div class="mouse-cursor cursor-inner" style="visibility: visible; transform: translate(608px, 460px);"></div>
+
+        <!-- Header Section Start -->
+        <header>
+            
+            <div id="header-sticky" class="header-3">
+                <div class="plane-shape">
+                    <img src="assets/img/plane.png" alt="shape-img">
+                </div>
+                <div class="container">
+                    <div class="mega-menu-wrapper"><div class="header-social-mobile d-lg-none text-center">
+  <a href="https://instagram.com/braynersolar" target="_blank">
+    <i class="fa-brands fa-instagram"></i> braynersolar
+  </a>  |  
+  <a href="https://wa.me/send?phone=552124344001&amp;text=Olá Brayner Solar!" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> (21) 2434-4001
+  </a>
+</div>
+                        <div class="header-main">
+                            <div class="header-left">
+								
+                                <div class="logo">
+                                    <a href="index.html" class="header-logo">
+                                        <img src="assets/img/braynersolar-logo.png" alt="logo-img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="header-right d-flex justify-content-end align-items-center">
+                                <div class="mean__menu-wrapper">
+                                    <div class="main-menu">
+                                        <nav id="mobile-menu">
+                                            <ul>
+                                          <li>                                                    
+                                           <a href="http://braynersolar.com.br" style="text-transform: none;">braynersolar.com.br</a>
+                                                </li> 
+                                           
+                                                <li>   <a href="https://instagram.com/braynersolar" style="text-transform: none;">                                                  
+													<i class="fa-brands fa-instagram"></i> braynersolar</a>
+                                                </li>
+												 <li>   <a href="https://web.whatsapp.com/send?phone=552124344001&amp;text=Olá Brayner Solar!" target="_blank">                                                  
+													<i class="fa-brands fa-whatsapp"> (21) 2434-4001 </i> </a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                
+                                
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--<< Hero Section Start >>--> 
+        <section class="hero-section hero-1">
+            <div class="array-button">
+                <button class="array-prev" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-b4bdcb9ff5133758"><i class="fal fa-arrow-left"></i></button>
+                <button class="array-next" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-b4bdcb9ff5133758"><i class="fal fa-arrow-right"></i></button>
+            </div>
+            <div class="swiper hero-slider swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress swiper-backface-hidden">
+                <div class="swiper-wrapper" id="swiper-wrapper-b4bdcb9ff5133758" aria-live="off" style="transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 1832px; transition-duration: 0ms; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                        <div class="hero-image bg-cover" style="background-image: url('assets/img/panels/Sem-titulo.png');"></div>
+                        <div class="container">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="hero-content">
+                                        <h6 data-animation="slideInRight" data-duration="2s" data-delay=".3s" class="" style="animation-delay: 0.3s; animation-duration: 2s;"> BRAYNER SOLAR</h6>
+                                        <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s" class="" style="animation-delay: 0.5s; animation-duration: 2s;">
+                                            Economia<br> Imediata
+                                        </h1>
+                                        <p data-animation="slideInRight" data-duration="2s" data-delay=".7s" class="" style="animation-delay: 0.7s; animation-duration: 2s;">
+                                           Acompanhe o desempenho do sistema em tempo real e comece a economizar já no primeiro mês.
+                                        </p>
+                                        <div class="hero-button">
+                                            <a href="#orcamento" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s;"><span>Solicite sua cotação personalizada <i class="fas fa-chevron-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 1832px; transition-duration: 0ms; opacity: 1; transform: translate3d(-1832px, 0px, 0px);">
+                        <div class="hero-image bg-cover" style="background-image: url('assets/img/panels/Sem-titulo-4.png');"></div>
+                        <div class="container">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="hero-content">
+                                        <h6 data-animation="slideInRight" data-duration="2s" data-delay=".3s" class="" style="animation-delay: 0.3s; animation-duration: 2s;">BRAYNER SOLAR </h6>
+                                        <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s" class="" style="animation-delay: 0.5s; animation-duration: 2s;">
+                                            Orçamento<br> gratuito
+                                        </h1>
+                                        <p data-animation="slideInRight" data-duration="2s" data-delay=".7s" class="" style="animation-delay: 0.7s; animation-duration: 2s;">
+                                            Analisamos suas necessidades energéticas e apresentamos uma proposta sob medida, sem custo.
+                                        </p>
+                                        <div class="hero-button">
+                                            <a href="#orcamento" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s;"><span>Solicite sua cotação personalizada <i class="fas fa-chevron-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 1832px; transition-duration: 0ms; opacity: 1; transform: translate3d(-3664px, 0px, 0px);">
+                        <div class="hero-image bg-cover" style="background-image: url('assets/img/panels/Sem-titulo-7.png');"></div>
+                        <div class="container">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="hero-content">
+                                        <h6 data-animation="slideInRight" data-duration="2s" data-delay=".3s" class="" style="animation-delay: 0.3s; animation-duration: 2s;"> BRAYNER SOLAR</h6>
+                                        <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s" class="" style="animation-delay: 0.5s; animation-duration: 2s;">
+                                            Instalação<br> rápida e limpa
+                                        </h1>
+                                        <p data-animation="slideInRight" data-duration="2s" data-delay=".7s" class="" style="animation-delay: 0.7s; animation-duration: 2s;">
+                                           Realizamos a instalação em poucos dias, sem quebra-quebra e cuidamos de toda a burocracia para você.
+                                        </p>
+                                        <div class="hero-button">
+                                            <a href="#orcamento" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s;"><span>Solicite sua cotação personalizada <i class="fas fa-chevron-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 1832px; transition-duration: 0ms; opacity: 0; transform: translate3d(-5496px, 0px, 0px);">
+                        <div class="hero-image bg-cover" style="background-image: url('assets/img/panels/Sem-titulo.png');"></div>
+                        <div class="container">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="hero-content">
+                                        <h6 data-animation="slideInRight" data-duration="2s" data-delay=".3s" class="" style="animation-delay: 0.3s; animation-duration: 2s;"> BRAYNER SOLAR</h6>
+                                        <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s" class="" style="animation-delay: 0.5s; animation-duration: 2s;">
+                                            Economia<br> Imediata
+                                        </h1>
+                                        <p data-animation="slideInRight" data-duration="2s" data-delay=".7s" class="" style="animation-delay: 0.7s; animation-duration: 2s;">
+                                           Acompanhe o desempenho do sistema em tempo real e comece a economizar já no primeiro mês.
+                                        </p>
+                                        <div class="hero-button">
+                                            <a href="#orcamento" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s;"><span>Solicite sua cotação personalizada <i class="fas fa-chevron-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 1832px; transition-duration: 0ms; opacity: 0; transform: translate3d(-7328px, 0px, 0px);">
+                        <div class="hero-image bg-cover" style="background-image: url('assets/img/panels/Sem-titulo-4.png');"></div>
+                        <div class="container">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="hero-content">
+                                        <h6 data-animation="slideInRight" data-duration="2s" data-delay=".3s" class="" style="animation-delay: 0.3s; animation-duration: 2s;">BRAYNER SOLAR </h6>
+                                        <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s" class="" style="animation-delay: 0.5s; animation-duration: 2s;">
+                                            Orçamento<br> gratuito
+                                        </h1>
+                                        <p data-animation="slideInRight" data-duration="2s" data-delay=".7s" class="" style="animation-delay: 0.7s; animation-duration: 2s;">
+                                            Analisamos suas necessidades energéticas e apresentamos uma proposta sob medida, sem custo.
+                                        </p>
+                                        <div class="hero-button">
+                                            <a href="#orcamento" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s;"><span>Solicite sua cotação personalizada <i class="fas fa-chevron-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </section>
+
+        <div class="marque-section">
+            <div class="marquee-wrapper text-slider">
+                <div class="marquee-inner to-left">
+                    <ul class="marqee-list d-flex">
+                        <li class="marquee-item">
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                            <span class="text-slider">Economize até 95% na sua conta de luz</span><span class="text-slider"><img src="assets/img/star.svg" alt="img"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+		<!-- Orcamento section form -->
+<section class="contact-section fix section-padding" id="orcamento">
+  <div class="container">
+    <div class="contact-wrapper-2">
+      <div class="row g-8 justify-content-center">
+        
+        <div class="col-lg-8 col-md-10">
+          <div class="contact-content text-center">
+           <h2>Peça seu orçamento sem compromisso</h2>
+            <p>Preencha o formulário e nossa equipe retornará o mais rápido possível com uma análise inicial do seu projeto.</p>
+
+            <!-- feedback messages -->
+            <div id="form-success" class="alert alert-success d-none" role="alert">
+              Obrigado! Recebemos sua solicitação e entraremos em contato em breve.
+            </div>
+            <div id="form-error" class="alert alert-danger d-none" role="alert">
+              Ocorreu um erro ao enviar. Tente novamente.
+            </div>
+
+            <form action="contact.php" id="contact-form" method="POST" class="contact-form-items" enctype="multipart/form-data" novalidate="">
+  <!-- honeypot anti-spam -->
+  <input type="text" name="website" id="website" class="d-none" tabindex="-1" autocomplete="off">
+
+  <div class="row g-4">
+
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+      <div class="form-clt">
+        <span>Nome*</span>
+        <input type="text" name="name" id="name" placeholder="Digite seu nome" required>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+      <div class="form-clt">
+        <span>Tipo de Instalação*</span>
+          <select name="instalation_type" id="instalation_type" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option value="residencial">Residencial</option>
+           <option value="comercial">Comercial</option>
+			
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s" style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+      <div class="form-clt">
+        <span>Telefone*</span>
+        <input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" pattern="[\d\s()+-]{8,}" required>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+      <div class="form-clt">
+        <span>Bairro / Cidade*</span>
+        <input type="text" name="city" id="city" placeholder="Digite sua cidade" required>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+      <div class="form-clt">
+        <span>Consumo médio</span>
+        <input type="number" name="consumo" id="consumo" placeholder="Consumo médio em kWh" min="0" step="1" inputmode="numeric">
+      </div>
+    </div>
+
+    <!-- Tipo de telhado (dropdown) - INSERTADO -->
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".85s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
+      <div class="form-clt">
+        <span>Tipo de telhado*</span>
+        <select name="roof_type" id="roof_type" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option value="ceramico">Cerâmico</option>
+           <option value="amianto_fibrocemento">Amianto/Fibrocemento</option>
+			<option value="metalico">Metálico</option>
+					<option value="laje">Laje</option>
+          <option value="carport">Carport</option>
+        </select>
+      </div>
+    </div>
+    <!-- /Tipo de telhado -->
+<div class="col-lg-6 wow fadeInUp" data-wow-delay=".9s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
+      <div class="form-clt">
+        <span>Necessidade de Instalação*</span>
+        <select name="urgency" id="urgency" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option value="pesquisa">Estou só pesquisando
+</option>
+           <option value="emergencial">Emergencial (mais cedo possível)
+</option>
+			<option value="2_6_meses">2 à 6 meses</option>
+			
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".95s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+      <div class="form-clt">
+        <span>Anexe sua conta de energia (Opcional)</span>
+        <input type="file" name="bill" id="bill" accept=".jpg,.jpeg,.png,.pdf">
+      </div>
+    </div>
+
+    <div class="col-lg-12 wow fadeInUp" data-wow-delay="1s" style="visibility: hidden; animation-delay: 1s; animation-name: none;">
+      <div class="form-clt">
+        <span>Mensagem*</span>
+        <textarea name="message" id="message" placeholder="Digite sua mensagem" maxlength="1000" required></textarea>
+      </div>
+    </div>
+
+    <div class="col-lg-12 wow fadeInUp" data-wow-delay="1.1s" style="visibility: hidden; animation-delay: 1.1s; animation-name: none;">
+      <button type="submit" class="theme-btn">
+        Pedir Orçamento <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+  </div>
+</form>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+		 <!-- Service Section Start -->
+        <section class="service-section fix section-padding bg-cover" style="background-image: url('assets/img/service/service-bg.jpg');">
+            <div class="container">
+				<div class="about-video-items"><iframe width="560" height="315" src="https://www.youtube.com/embed/D60A-xCyQZY?si=Y3tshuCKSnj2KKT_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br></div><br>
+                <div class="section-title-area">
+                    <div class="section-title">
+                         <span class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><br>credibilidade à sua disposição</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                                     28 anos de experiência em engenharia, agora impulsionando o futuro com energia solar.
+                                    </h2><p>Estamos no mercado há 28 anos, sendo os últimos 7 dedicados ao setor de energia solar. Nossa experiência é o que nos permite entregar resultados sólidos, tanto em projetos de grande porte quanto, no segmento residencial.</p>
+                    </div>
+                 
+                </div>
+				
+				<div class="row g-4">
+  <!-- Col 1: Clientes Satisfeitos -->
+  <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+    <div class="service-box-items style-1 h-100">
+      <div class="content">
+        <h4><a href="#">Clientes Satisfeitos</a></h4>
+        <p> Nossos clientes são nossa maior prioridade. Com todas as avaliações no Google sendo positivas, temos o orgulho de dizer que 100% dos nossos clientes estão satisfeitos com a qualidade do nosso serviço e suporte.</p>
+        <p>&nbsp;</p>
+        <br>
+        <!-- Rating Google -->
+        <a class="google-rating mt-2"
+           href="https://www.google.com/search?q=Brayner+Solar&kgmid=/g/11fjyn35gj"
+           target="_blank" rel="noopener nofollow"
+           aria-label="Avaliações da Brayner Solar no Google">
+          <img class="google-logo"
+               src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+               alt="Google" width="90" height="30" />
+         <span class="stars" aria-hidden="true">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+  </span>
+          <span class="rating-text"><strong>5.0</strong> – 33 avaliações</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <!-- Columna 2: Carrusel de imágenes review -->
+      <div class="col-xl-6 col-lg-6 col-md-6">
+        <div class="service-box-items style-1 h-100">
+          <div class="image-carousel-block">
+            <div class="swiper gallery-slider">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0000_img.jpg" alt="Instalação fotovoltaica 01" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0002_img-2.jpg" alt="Instalação fotovoltaica 02" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0003_img-3.jpg" alt="Instalação fotovoltaica 03" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0004_img-4.jpg" alt="Instalação fotovoltaica 04" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0005_img-5.jpg" alt="Instalação fotovoltaica 05" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0006_img-6.jpg" alt="Instalação fotovoltaica 06" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0007_img-7.jpg" alt="Instalação fotovoltaica 07" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0008_img-8.jpg" alt="Instalação fotovoltaica 08" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0009_img-9.jpg" alt="Instalação fotovoltaica 09" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0010_img-10.jpg" alt="Instalação fotovoltaica 10" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0011_img-11.jpg" alt="Instalação fotovoltaica 11" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0012_img-12.jpg" alt="Instalação fotovoltaica 12" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0013_img-13.jpg" alt="Instalação fotovoltaica 13" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0014_img-14.jpg" alt="Instalação fotovoltaica 14" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0015_img-15.jpg" alt="Instalação fotovoltaica 15" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0016_img-16.jpg" alt="Instalação fotovoltaica 16" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0017_img-17.jpg" alt="Instalação fotovoltaica 17" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0018_img-18.jpg" alt="Instalação fotovoltaica 18" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0019_img-19.jpg" alt="Instalação fotovoltaica 19" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0020_img-20.jpg" alt="Instalação fotovoltaica 20" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0021_img-21.jpg" alt="Instalação fotovoltaica 21" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0022_img-22.jpg" alt="Instalação fotovoltaica 22" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0023_img-23.jpg" alt="Instalação fotovoltaica 23" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0024_img-24.jpg" alt="Instalação fotovoltaica 24" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0025_img-25.jpg" alt="Instalação fotovoltaica 25" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/reviews/review_0026_img-26.jpg" alt="Instalação fotovoltaica 26" loading="lazy">
+                </div>
+              </div>
+
+              <!-- Solo dots (paginación) -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  <!-- Fila 2: +600 (ancho completo) -->
+  <div class="col-12 wow fadeInUp" data-wow-delay=".6s">
+    <div class="service-box-items style-1">
+      <div class="content">
+        <h4><a href="#">+600 Instalações Realizadas</a></h4>
+        <p>
+         Com mais de 600 instalações de sucesso, você pode confiar na nossa capacidade de fornecer soluções solares eficientes e de alta qualidade, garantindo economia e sustentabilidade para sua residência.
+        </p>
+		     <div class="hero-button">
+                                            <a href="https://www.braynersolar.com.br/Testing/assets/pdf/certidao-comprovacao-experiencia-clara-energia-crt-rj-2024-02.pdf" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s; border-style: 1px solid; border-color: #FFFFFF;"><span>Nossos projetos cadastrados no CREA E CFT <i class="fas fa-chevron-right"></i></span></a>
+        </div>
+      </div>
+    </div>
+    </div>
+								
+
+  <!-- Fila 3: 1 ano de monitoramento (ancho completo) -->
+  <div class="col-12 wow fadeInUp" data-wow-delay=".6s">
+    <div class="container-fluid px-0">
+  <div class="row g-0">
+    <div class="col-12">
+      <img
+        src="https://braynersolar.com.br/Testing/assets/img/hero/1-ano-de-monitoramento.jpg"
+        alt="1 ano de monitoramento"
+        class="img-fluid w-100 d-block"
+        loading="lazy"
+        sizes="100vw"
+      >
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+			</div>
+
+
+        </section>
+      
+        <!--<< Faq Section Start >>-->
+        <section class="faq-section section-padding">
+            <div class="container">
+                <div class="faq-wrapper">
+                    <div class="row g-4">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                            <div class="faq-image">
+                                <img src="https://braynersolar.com.br/landing/assets/img/reviews/bs-itanhanga.jpg" alt="faq-img">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="faq-content">
+                                <div class="section-title">
+                                    <span class="wow fadeInUp" style="visibility: hidden; animation-name: none;">Brayner Solar</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                                        FAQs
+                                    </h2>
+                                </div>
+                                <div class="faq-accordion mt-4 mt-md-0">
+  <div class="accordion" id="accordion">
+    
+    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+      <h5 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+          O investimento inicial é alto?
+        </button>
+      </h5>
+      <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordion">
+        <div class="accordion-body">
+          O sistema de energia solar pode ser parcelado em até 72 vezes e, em muitos casos, as parcelas são mais baixas que o valor da sua conta de luz, permitindo economia desde o primeiro mês.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+      <h5 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+          Quanto tempo demora para o sistema de energia solar começar a gerar economia?
+        </button>
+      </h5>
+      <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
+        <div class="accordion-body">
+          O tempo máximo para a entrega de um projeto é de 60 dias. Após a instalação, o sistema começa a gerar economia imediatamente. A partir da troca do medidor, você já verá uma redução significativa na sua conta de luz.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+      <h5 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+          E se houver algum problema com o sistema?
+        </button>
+      </h5>
+      <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
+        <div class="accordion-body">
+          Oferecemos garantia de até 25 anos nos módulos fotovoltaicos e até 12 anos nos inversores e microinversores. Nosso suporte pós-venda premiado garante que você terá assistência rápida e eficiente, sempre que necessário.
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay="1.1s" style="visibility: hidden; animation-delay: 1.1s; animation-name: none;">
+      <h5 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+          Preciso de manutenção frequente no sistema?
+        </button>
+      </h5>
+      <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
+        <div class="accordion-body">
+          A manutenção é mínima. Basta realizar uma limpeza periódica dos painéis para garantir a máxima eficiência. Fora isso, o sistema funciona de maneira autônoma e quase sem intervenção.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <!--<< Footer Section Start >>-->
+        <footer class="footer-section footer-bg">
+            
+            <div class="footer-bottom style-2">
+                <div class="container">
+                    <div class="footer-wrapper d-flex align-items-center justify-content-between">
+                        <p class="wow fadeInLeft color-2" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                            © All Copyright 2025 by <a href="#">Brayner Solar</a> Powered by Helios Digital Marketing
+                        </p>
+                      
+                </div>
+                <a href="#" id="scrollUp" class="scroll-icon">
+                    <i class="far fa-arrow-up"></i>
+                </a>
+				</div></div>
+        </footer>
+
+         <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Nice Select Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+		
+        <script src="assets/js/swiper-bundle.min.js"></script>
+		<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Inicializa todos los sliders con esta clase (por si tienes más de uno)
+  document.querySelectorAll('.image-carousel-block .gallery-slider').forEach(function (el) {
+    new Swiper(el, {
+      loop: true,
+      speed: 900,
+      slidesPerView: 1,
+      spaceBetween: 12,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      pagination: {
+        el: el.querySelector('.swiper-pagination'),
+        clickable: true,
+        dynamicBullets: true
+      }
+      // Sin navigation: solo puntos
+    });
+  });
+});
+</script>
+
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    
+</body></html>
