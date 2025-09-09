@@ -11,10 +11,10 @@ require __DIR__ . '/phpmailer/src/Exception.php';
 require __DIR__ . '/phpmailer/src/PHPMailer.php';
 require __DIR__ . '/phpmailer/src/SMTP.php';
 
-/* ================== CONFIG SMTP (SendGrid) ================== */
-$smtpHost   = 'smtp.sendgrid.net';
-$smtpUser   = 'apikey'; // Esto es literal, no lo cambies.
-$smtpPass   = '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'; // Tu nueva clave API
+/* ================== CONFIG SMTP ================== */
+$smtpHost   = 'smtp.hosting.net';
+$smtpUser   = 'apikey'; 
+$smtpPass   = 'pass'; 
 $smtpPort   = 587; // Puerto recomendado para STARTTLS
 $smtpSecure = PHPMailer::ENCRYPTION_STARTTLS; // Método de encriptación recomendado
 
