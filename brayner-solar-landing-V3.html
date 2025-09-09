@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt"><!--<< Header Area >>--><head>
+
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-523J3J94');</script>
+<!-- End Google Tag Manager -->
         <!-- ========== Meta Tags ========== -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,7 +108,45 @@ border-radius: 4px;/* ajusta según tus inputs */
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
-        </style>
+			
+/* Estilos del botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366; /* color oficial WhatsApp */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+</style>
+
 	<!-- Roboto (Google Fonts) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +156,9 @@ border-radius: 4px;/* ajusta según tus inputs */
     </head>
       
     <body cz-shortcut-listen="true">
-
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-523J3J94"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
         <!-- Preloader Start -->
         <div id="preloader" class="preloader loaded" style="display: none;">
             <div class="animation-preloader">
@@ -170,14 +218,16 @@ border-radius: 4px;/* ajusta según tus inputs */
                     <img src="assets/img/plane.png" alt="shape-img">
                 </div>
                 <div class="container">
-                    <div class="mega-menu-wrapper"><div class="header-social-mobile d-lg-none text-center">
+                    <div class="mega-menu-wrapper">
+						<div class="header-social-mobile d-lg-none text-center">
   <a href="https://instagram.com/braynersolar" target="_blank">
     <i class="fa-brands fa-instagram"></i> braynersolar
   </a>  |  
-  <a href="https://wa.me/send?phone=552124344001&amp;text=Olá Brayner Solar!" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> (21) 2434-4001
+  <a class="js-wh" target="_blank" rel="noopener" style="text-transform: none;">
+    <i class="fa-brands fa-whatsapp"></i> <span class="js-wh-label">(21) 2434-4001</span>
   </a>
 </div>
+
                         <div class="header-main">
                             <div class="header-left">
 								
@@ -192,18 +242,23 @@ border-radius: 4px;/* ajusta según tus inputs */
                                     <div class="main-menu">
                                         <nav id="mobile-menu">
                                             <ul>
-                                          <li>                                                    
-                                           <a href="http://braynersolar.com.br" style="text-transform: none;">braynersolar.com.br</a>
-                                                </li> 
-                                           
-                                                <li>   <a href="https://instagram.com/braynersolar" style="text-transform: none;">                                                  
-													<i class="fa-brands fa-instagram"></i> braynersolar</a>
-                                                </li>
-												 <li>   <a href="https://web.whatsapp.com/send?phone=552124344001&amp;text=Olá Brayner Solar!" target="_blank">                                                  
-													<i class="fa-brands fa-whatsapp"> (21) 2434-4001 </i> </a>
-                                                </li>
-                                                
-                                            </ul>
+  <li>
+    <a id="homepage-link" href="https://braynersolar.com.br" target="_blank" style="text-transform: none;">braynersolar.com.br</a>
+  </li> 
+  <li>
+    <a href="https://instagram.com/braynersolar" style="text-transform: none;">
+      <i class="fa-brands fa-instagram"></i> braynersolar
+    </a>
+  </li>
+  <li>
+	  <a id="wh-header" class="js-wh" href="https://wa.me/552124344001?text=Oi%2C%20equipe%20Brayner%20Solar"
+   target="_blank" rel="noopener" style="text-transform:none;">
+  <i class="fa-brands fa-whatsapp"></i> <span class="js-wh-label">(21) 2434-4001</span>
+</a>
+    
+  </li>
+</ul>
+
                                         </nav>
                                     </div>
                                 </div>
@@ -371,27 +426,33 @@ border-radius: 4px;/* ajusta según tus inputs */
             <p>Preencha o formulário e nossa equipe retornará o mais rápido possível com uma análise inicial do seu projeto.</p>
 
             <!-- feedback messages -->
-            <div id="form-success" class="alert alert-success d-none" role="alert">
+            <div id="form-success" class="alert alert-success d-none" role="alert" aria-live="polite">
               Obrigado! Recebemos sua solicitação e entraremos em contato em breve.
             </div>
-            <div id="form-error" class="alert alert-danger d-none" role="alert">
+            <div id="form-error" class="alert alert-danger d-none" role="alert" aria-live="assertive">
               Ocorreu um erro ao enviar. Tente novamente.
             </div>
 
-            <form action="contact.php" id="contact-form" method="POST" class="contact-form-items" enctype="multipart/form-data" novalidate="">
+            <form action="https://formspree.io/f/xdklwyqd" id="contact-form" method="POST" class="contact-form-items" enctype="multipart/form-data">
   <!-- honeypot anti-spam -->
   <input type="text" name="website" id="website" class="d-none" tabindex="-1" autocomplete="off">
 
   <div class="row g-4">
 
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
       <div class="form-clt">
         <span>Nome*</span>
         <input type="text" name="name" id="name" placeholder="Digite seu nome" required>
       </div>
     </div>
+	   <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+      <div class="form-clt">
+        <span>Email*</span>
+        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+      </div>
+    </div>
 
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
       <div class="form-clt">
         <span>Tipo de Instalação*</span>
           <select name="instalation_type" id="instalation_type" required>
@@ -403,21 +464,21 @@ border-radius: 4px;/* ajusta según tus inputs */
       </div>
     </div>
 
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s" style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
       <div class="form-clt">
         <span>Telefone*</span>
         <input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" pattern="[\d\s()+-]{8,}" required>
       </div>
     </div>
 
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
       <div class="form-clt">
         <span>Bairro / Cidade*</span>
         <input type="text" name="city" id="city" placeholder="Digite sua cidade" required>
       </div>
     </div>
 
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
       <div class="form-clt">
         <span>Consumo médio</span>
         <input type="number" name="consumo" id="consumo" placeholder="Consumo médio em kWh" min="0" step="1" inputmode="numeric">
@@ -425,7 +486,7 @@ border-radius: 4px;/* ajusta según tus inputs */
     </div>
 
     <!-- Tipo de telhado (dropdown) - INSERTADO -->
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".85s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
       <div class="form-clt">
         <span>Tipo de telhado*</span>
         <select name="roof_type" id="roof_type" required>
@@ -439,7 +500,7 @@ border-radius: 4px;/* ajusta según tus inputs */
       </div>
     </div>
     <!-- /Tipo de telhado -->
-<div class="col-lg-6 wow fadeInUp" data-wow-delay=".9s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
+<div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: .85s; animation-name: none;">
       <div class="form-clt">
         <span>Necessidade de Instalação*</span>
         <select name="urgency" id="urgency" required>
@@ -453,7 +514,7 @@ border-radius: 4px;/* ajusta según tus inputs */
         </select>
       </div>
     </div>
-    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".95s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
       <div class="form-clt">
         <span>Anexe sua conta de energia (Opcional)</span>
         <input type="file" name="bill" id="bill" accept=".jpg,.jpeg,.png,.pdf">
@@ -467,7 +528,8 @@ border-radius: 4px;/* ajusta según tus inputs */
       </div>
     </div>
 
-    <div class="col-lg-12 wow fadeInUp" data-wow-delay="1.1s" style="visibility: hidden; animation-delay: 1.1s; animation-name: none;">
+    <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.6s" style="visibility: hidden; animation-delay: 1.1s; animation-name: none;">
+		<input type="hidden" name="origem" value="Landing - Orçamento">
       <button type="submit" class="theme-btn">
         Pedir Orçamento <i class="fa-solid fa-arrow-right-long"></i>
       </button>
@@ -487,7 +549,7 @@ border-radius: 4px;/* ajusta según tus inputs */
 		 <!-- Service Section Start -->
         <section class="service-section fix section-padding bg-cover" style="background-image: url('assets/img/service/service-bg.jpg');">
             <div class="container">
-				<div class="about-video-items"><iframe width="560" height="315" src="https://www.youtube.com/embed/D60A-xCyQZY?si=Y3tshuCKSnj2KKT_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br></div><br>
+				<div class="about-video-items"><iframe width="560" height="315" src="https://www.youtube.com/embed/D60A-xCyQZY?si=Y3tshuCKSnj2KKT_&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br></div><br>
                 <div class="section-title-area">
                     <div class="section-title">
                          <span class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><br>credibilidade à sua disposição</span>
@@ -633,7 +695,7 @@ border-radius: 4px;/* ajusta según tus inputs */
          Com mais de 600 instalações de sucesso, você pode confiar na nossa capacidade de fornecer soluções solares eficientes e de alta qualidade, garantindo economia e sustentabilidade para sua residência.
         </p>
 		     <div class="hero-button">
-                                            <a href="https://www.braynersolar.com.br/Testing/assets/pdf/certidao-comprovacao-experiencia-clara-energia-crt-rj-2024-02.pdf" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s; border-style: 1px solid; border-color: #FFFFFF;"><span>Nossos projetos cadastrados no CREA E CFT <i class="fas fa-chevron-right"></i></span></a>
+                                            <a href="https://www.braynersolar.com.br/landing/assets/pdf/certidao-comprovacao-experiencia-clara-energia-crt-rj-2024-02.pdf" target="_blank" class="theme-btn theme-color-2" data-animation="slideInRight" data-duration="2s" data-delay=".9s" style="animation-delay: 0.9s; animation-duration: 2s; border-style: 1px solid; border-color: #FFFFFF;"><span>Nossos projetos cadastrados no CREA E CFT <i class="fas fa-chevron-right"></i></span></a>
         </div>
       </div>
     </div>
@@ -646,7 +708,7 @@ border-radius: 4px;/* ajusta según tus inputs */
   <div class="row g-0">
     <div class="col-12">
       <img
-        src="https://braynersolar.com.br/Testing/assets/img/hero/1-ano-de-monitoramento.jpg"
+        src="assets/img/hero/1-ano-de-monitoramento.jpg"
         alt="1 ano de monitoramento"
         class="img-fluid w-100 d-block"
         loading="lazy"
@@ -815,5 +877,77 @@ document.addEventListener('DOMContentLoaded', function () {
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
-    
+    <!-- Botón flotante de WhatsApp -->
+<a id="wh-floating"
+  href="https://wa.me/552124344001?text=Oi%2C%20equipe%20Brayner%20Solar"
+  class="whatsapp-float js-wh"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Fale conosco no WhatsApp"
+>
+  <!-- Ícono WhatsApp en SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16 .667C7.64.667.667 7.64.667 16c0 2.816.74 5.564 2.145 7.99L.667 31.333l7.55-2.095A15.27 15.27 0 0 0 16 31.333c8.36 0 15.333-6.973 15.333-15.333S24.36.667 16 .667zm0 27.306c-2.627 0-5.19-.705-7.427-2.04l-.53-.314-4.48 1.243 1.207-4.366-.347-.563A12.632 12.632 0 0 1 3.333 16C3.333 9.19 9.19 3.333 16 3.333S28.667 9.19 28.667 16 22.81 27.973 16 27.973zm7.373-9.227c-.403-.2-2.38-1.177-2.75-1.31-.37-.137-.64-.2-.91.2-.27.396-1.05 1.31-1.29 1.577-.237.27-.473.3-.877.1-.403-.2-1.7-.627-3.24-2-1.197-1.07-2.003-2.39-2.24-2.79-.237-.396-.025-.61.177-.81.18-.178.403-.46.604-.69.2-.236.27-.396.403-.663.133-.27.066-.497-.033-.696-.1-.2-.91-2.2-1.25-3.01-.33-.79-.67-.68-.91-.69h-.78c-.27 0-.71.1-1.083.497-.37.396-1.42 1.386-1.42 3.38 0 1.993 1.457 3.913 1.66 4.183.2.27 2.87 4.383 6.96 6.147.973.42 1.73.67 2.323.86.975.31 1.86.267 2.557.163.78-.117 2.38-.97 2.717-1.91.336-.94.336-1.743.237-1.91-.1-.163-.37-.27-.773-.47z"/>
+  </svg>
+</a>
+<script>
+(function(){
+  const DESTS = [
+    { href: "https://wa.me/552124344001?text=Oi%2C%20equipe%20Brayner%20Solar" }, // (21) 2434-4001
+    { href: "https://wa.me/5521997388260?text=Oi%2C%20equipe%20Brayner%20Solar" }  // (21) 99738-8260
+  ];
+  const LABELS = ["(21) 2434-4001", "(21) 99738-8260"];
+  const KEY = "wh_rr_index";
+
+  let memIdx = 0;
+  function safeGetItem(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function safeSetItem(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+
+  function getIndex(){
+    const raw = safeGetItem(KEY);
+    const n = parseInt(raw, 10);
+    // Si no hay valor guardado, elegir aleatorio entre 0 o 1
+    if (!Number.isFinite(n)) {
+      const first = Math.random() < 0.5 ? 0 : 1;
+      memIdx = first;
+      safeSetItem(KEY, String(first));
+      return first;
+    }
+    return n % DESTS.length;
+  }
+  function bumpIndex(){
+    const next = (getIndex() + 1) % DESTS.length;
+    memIdx = next;
+    safeSetItem(KEY, String(next));
+  }
+
+  const labelEl = document.querySelector('.js-wh-label');
+  if (labelEl) labelEl.textContent = LABELS[getIndex()];
+
+  document.querySelectorAll('.js-wh').forEach(function(el){
+    el.addEventListener('click', function(){
+      const idx = getIndex();
+      el.setAttribute('href', DESTS[idx].href);
+      bumpIndex();
+      if (labelEl) labelEl.textContent = LABELS[getIndex()];
+    }, );
+  });
+})();
+</script>
+	<script>
+window.dataLayer = window.dataLayer || [];
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function() {
+    window.dataLayer.push({
+      event: 'form_submit_lp',
+      form_id: 'contact-form'
+    });
+  });
+});
+</script>
+	
+
 </body></html>
